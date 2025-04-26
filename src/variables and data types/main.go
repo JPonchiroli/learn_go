@@ -16,8 +16,8 @@ func main() {
 	fmt.Println("Casting numeric types:", result)
 
 	var myString string = "Hello World!"
-	fmt.Println("Counting  the length:", utf8.RuneCountInString(myString))
-	fmt.Println("Counting  the bytes:", len("°"))
+	fmt.Println("Counting the length:", utf8.RuneCountInString(myString))
+	fmt.Println("Counting the bytes:", len("°"))
 
 	var myBool bool = true
 	fmt.Println("Using bollean:", myBool)
