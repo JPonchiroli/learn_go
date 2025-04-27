@@ -5,12 +5,12 @@ import (
 )
 
 func main() {
-	var myEngine gasEngine = gasEngine{25, 15, owner{"John Doe", 45}}
+	var myEngine GasEngine = GasEngine{25, 15, owner{"John Doe", 45}}
 	//myEngine.gallons = 5
 	canMakeIt(myEngine, 50)
 }
 
-func (e gasEngine) milesLeft() uint8 { // Importing the interface
+func (e GasEngine) milesLeft() uint8 { // Importing the interface
 	return e.gallons * e.mpg
 }
 

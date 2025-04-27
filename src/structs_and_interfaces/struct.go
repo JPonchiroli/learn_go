@@ -1,6 +1,6 @@
 package structs_and_interfaces
 
-type gasEngine struct {
+type GasEngine struct {
 	mpg     uint8
 	gallons uint8
 	owner
