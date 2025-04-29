@@ -2,6 +2,7 @@ package message
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 	"strconv"
 )
@@ -23,9 +24,18 @@ func ReceiveJSON(w http.ResponseWriter, r *http.Request) {
 
 	qtdMessages++
 
-	w.Write([]byte("Receive JSON: " + message.Message))
+	MessagesMap[message.Code] = message
+
+	w.Write([]byte("Message Saved"))
 }
 
 func QtdMessages(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("Qtd Messages: " + strconv.Itoa(qtdMessages)))
+}
+
+func GetMessages(w http.ResponseWriter, r *http.Request) {
+	for code, message := range MessagesMap {
+		response := fmt.Sprintf("The code is %v and the message is %v\n", code, message.Message)
+		w.Write([]byte(response))
+	}
 }
