@@ -2,18 +2,18 @@ package main
 
 import (
 	"fmt"
-	"learn_go/crud_api/internal/handler"
+	"learn_go/test_api/internal/routes"
 	"net/http"
 
-	"github.com/go-chi/chi"
-	log "github.com/sirupsen/logrus"
+	"github.com/go-chi/chi"          // Roting http
+	log "github.com/sirupsen/logrus" // Generate logs
 )
 
 func main() {
 	log.SetReportCaller(true)
 
-	var r *chi.Mux = chi.NewRouter()
-	handler.Handler(r)
+	var r *chi.Mux = chi.NewRouter() // Receive the http requests and direct them to the handler
+	routes.Handler(r)
 
 	fmt.Println("Starting CRUD API service...")
 
