@@ -1,0 +1,27 @@
+go-crud-app/
+│
+├── cmd/                     # Main application entry point
+│   └── main.go
+│
+├── config/                  # Configuration files (env, database, etc.)
+│   └── config.go
+│
+├── internal/                # Internal application code (business domain)
+│   ├── user/                # A module (e.g., user)
+│   │   ├── handler.go       # API handlers (HTTP layer)
+│   │   ├── service.go       # Business logic (service layer)
+│   │   ├── repository.go    # Database access
+│   │   └── model.go         # Data structures (e.g., structs)
+│   │
+│   └── other_module/        # Other modules
+│
+├── pkg/                     # Reusable packages (utils, middlewares, etc.)
+│   ├── database/            # Database initialization
+│   └── middleware/          # Middlewares (authentication, CORS, etc.)
+│
+├── routes/                  # Route definitions
+│   └── routes.go
+│
+├── .env                     # Environment variables
+├── go.mod
+└── README.md
