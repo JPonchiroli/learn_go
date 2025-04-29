@@ -17,9 +17,10 @@ func Handler(r *chi.Mux) {
 
 	// Message struct
 	r.Route("/api/json", func(router chi.Router) {
-		router.Get("/", handler.ReceiveJSON)
+		router.Post("/", handler.ReceiveJSON)
 		router.Get("/qtd", handler.QtdMessages)
 		router.Get("/get-messages", handler.GetMessages)
+		router.Get("/get-message/{code}", handler.GetMessage)
 	})
 
 }
